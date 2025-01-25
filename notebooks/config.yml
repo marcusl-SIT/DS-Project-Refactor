@@ -1,0 +1,6 @@
+paths:
+  URL: https://filialen.migros.ch/it/center:46.8182,8.2275/zoom:8/
+  data_input: geonames-all-cities-with-a-population-1000-2.csv
+  output: df_migros.csv
+data_options:
+  cols_to_drop: []
