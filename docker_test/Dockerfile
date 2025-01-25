@@ -14,4 +14,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
 
 # Set the command to run your Python script
-CMD ["streamlit", "run", "app.py"]
+EXPOSE 8501 
+# Render deployment still works without exposing port 
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
+# HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+# ENTRYPOINT ["streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
