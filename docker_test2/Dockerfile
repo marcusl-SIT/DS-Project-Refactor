@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the script file to the container
-COPY app.py .
+COPY predict_house_pricing.py .
 
 # Set the command to run your Python script
-CMD ["streamlit", "run", "app.py"]
+CMD ["python", "predict_house_pricing.py"]
